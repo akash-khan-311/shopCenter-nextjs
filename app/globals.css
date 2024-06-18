@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.banner {
+    background: url('../public/header.webp') no-repeat center center;
+}

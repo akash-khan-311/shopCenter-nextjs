@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import Container from "./Shared/Container";
+import Container from "../Shared/Container";
 
 const Navbar = () => {
   return (
