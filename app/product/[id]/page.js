@@ -1,13 +1,15 @@
-"use client";
 
-import Container from "@/app/components/Shared/Container";
+
+
 import { products } from "@/app/data/data";
 import { getPrice } from "@/utils/getPrice";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const ProductDetails = ({ params: { id } }) => {
   const filteredProduct = products.find((product) => product.id === Number(id));
+  
 
   const mainPrice = getPrice(
     filteredProduct.price,
@@ -27,8 +29,8 @@ const ProductDetails = ({ params: { id } }) => {
               alt
             />
             <div className="flex gap-4 mt-4">
-              {filteredProduct?.images &&
-                filteredProduct?.images.map((image) => (
+              {filteredProduct.images &&
+                filteredProduct.images.map((image) => (
                   <Image
                     src={image}
                     width={100}
@@ -43,9 +45,9 @@ const ProductDetails = ({ params: { id } }) => {
             <h1 className="italic text-xl lg:text-3xl font-serif font-semibold">
               {filteredProduct.title}
             </h1>
-            <span className="text-[#919090] my-3">
+            <Link href={`/category/${filteredProduct.category.toLocaleLowerCase()}`} className="text-[#919090] my-3">
               {filteredProduct.category}
-            </span>
+            </Link>
             <div className="mt-3 flex items-center justify-start gap-1">
               <Image src="/star.svg" width={20} height={20} alt="rating" />
               <Image src="/star.svg" width={20} height={20} alt="rating" />
