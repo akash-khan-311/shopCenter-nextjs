@@ -2,12 +2,13 @@
 
 import Banner from "@/app/components/Banner/Banner";
 import ProductCard from "@/app/components/ProductCard/ProductCard";
+import Loader from "@/app/components/Shared/Loader";
 import { products } from "@/app/data/data";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 
-import React, { useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 
 const CategoryPage = ({ params: { name } }) => {
   const router = useRouter();
@@ -38,7 +39,7 @@ const CategoryPage = ({ params: { name } }) => {
 
   return (
     <main>
-      <Banner />
+      {/* <Banner /> */}
       {/* Product section start */}
       <section className="w-11/12 lg:w-10/12 max-w-7xl mx-auto py-0 lg:py-10 lg:flex justify-between items-start">
         <div className="w-full flex items-center justify-between lg:block lg:w-2/12 my-10 lg:my-0 lg:mt-4 flex-col">
@@ -86,10 +87,12 @@ const CategoryPage = ({ params: { name } }) => {
           ))}
         </div>
         <div className="sticky top-0 right-0 w-full lg:w-10/12 grid grid-cols-2 gap-4 lg:grid-cols-3 my-4 lg:my-10">
+          <Suspense fallback={<Loader />}>
           {filteredProducts &&
             filteredProducts.map((product) => (
               <ProductCard key={product?.id} product={product} />
             ))}
+          </Suspense>
         </div>
       </section>
       {/* Product section start */}
