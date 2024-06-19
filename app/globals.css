@@ -6,3 +6,15 @@
 .banner {
     background: url('../public/header.webp') no-repeat center center;
 }
+
+body {
+    background: url("/bg.jpg"),
+      linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+    background-blend-mode: overlay;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+  
+    height: 100vh;
+  }

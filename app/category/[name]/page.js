@@ -49,8 +49,8 @@ const CategoryPage = ({ params: { name } }) => {
             >
               <Link
                 scroll={false}
-                className={` capitalize hover:border-b hover:border-black ${
-                  isActive("/category/all") ? "border-b border-black" : ""
+                className={` capitalize hover:border-b hover:border-white text-white ${
+                  isActive("/category/all") ? "border-b border-white" : " "
                 }`}
                 onClick={(e) => handleCategoryClick(e, "", "/category/all")}
                 href={"/category/all"}
@@ -70,9 +70,9 @@ const CategoryPage = ({ params: { name } }) => {
             >
               <Link
                 scroll={false}
-                className={` hover:border-b hover:border-black capitalize border-b ${
+                className={` hover:border-b hover:border-white capitalize text-white  ${
                   isActive(`/category/${category}`)
-                    ? " border-b border-black "
+                    ? " border-b border-white "
                     : ""
                 }`}
                 onClick={(e) =>
@@ -100,7 +100,7 @@ const CategoryPage = ({ params: { name } }) => {
           </h1>
           <p className="text-center text-sm lg:text-base">
             Sign up for new product drops, behind-the-scenes content, and
-            monthly "5 Things I'm Digging" emails
+            monthly &quot;5 Things I&apos;m Digging&quot; emails
           </p>
           <form action="#" className="mb-5">
             <input
@@ -109,7 +109,7 @@ const CategoryPage = ({ params: { name } }) => {
               placeholder="Enter your email"
             />
             <button className="w-full bg-[#1a1a1a] hover:bg-[#3a3a3a] text-center py-2 mt-2 text-white">
-              See what we're doing
+              See what we&apos;re doing
             </button>
           </form>
         </div>

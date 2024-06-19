@@ -20,9 +20,9 @@ const ProductCard = ({ product }) => {
   const mainPrice = getPrice(price, discountPercentage);
 
   return (
-    <div>
+    <div className=" ">
       <div
-        className={`relative delay-150 w-180px lg:w-[270px] h-[205px] lg:h-[310px] bg-[#f8f8f8]  bg-cover bg-center transition-all duration-3000 ease-in-out transform`}
+        className={` w-full   delay-150 h-[205px] lg:h-[310px] bg-[#f8f8f8]  transition-all duration-3000 ease-in-out transform`}
       >
         <Image
           src={thumbnail}
@@ -32,19 +32,21 @@ const ProductCard = ({ product }) => {
           className="w-full h-full"
         />
       </div>
-      <h2 className="text-sm lg:text-base mt-2">
-        <Link className="text-base font-bold" href={`/product/${id}`}>
+     <div className="backdrop-blur-sm bg-white/30 p-4">
+     <h2 className="text-sm lg:text-base ">
+        <Link className="text-base font-bold text-white" href={`/product/${id}`}>
           {title}
         </Link>
-        <span className="text-[#919090]">
+        <span className="text-gray-400  ">
           <Link href={`/category/${category}`}>({category})</Link>
         </span>
       </h2>
-      <p className="text-[#919090] text-sm ">{description}</p>
+      <p className="text-gray-400 text-sm ">{description}</p>
       <p className="text-rose-600 text-sm mt-4">
         <span className="text-[#919090] line-through">${price}</span> $
         {mainPrice}
       </p>
+     </div>
     </div>
   );
 };

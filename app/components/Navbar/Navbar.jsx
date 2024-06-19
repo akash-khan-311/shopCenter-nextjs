@@ -4,7 +4,8 @@ import Container from "../Shared/Container";
 
 const Navbar = () => {
   return (
-    <Container>
+    <section className="backdrop-blur-sm bg-white/30">
+   <Container>
         <nav className="flex items-center justify-between py-5 lg:py-6">
       <div className="flex gap-5 items-center justify-between lg:w-8/12 text-[#1A1A1A]">
         <div className="flex items-center gap-2">
@@ -43,6 +44,8 @@ const Navbar = () => {
       </div>
     </nav>
     </Container>
+    </section>
+ 
   );
 };
 export default Navbar;

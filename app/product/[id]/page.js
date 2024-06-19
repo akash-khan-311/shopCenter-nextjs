@@ -26,17 +26,18 @@ const ProductDetails = ({ params: { id } }) => {
               width={400}
               height={500}
               className="mx-auto object-cover"
-              alt
+              alt="product"
             />
             <div className="flex gap-4 mt-4">
               {filteredProduct.images &&
                 filteredProduct.images.map((image) => (
                   <Image
+                  key={image}
                     src={image}
                     width={100}
                     height={100}
                     className="mx-auto border object-cover"
-                    alt="image"
+                    alt="product"
                   />
                 ))}
             </div>
